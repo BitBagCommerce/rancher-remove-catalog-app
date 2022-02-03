@@ -27,7 +27,6 @@ try {
         });
     });
 
-    request.write(data);
     request.on('error', error => core.setFailed(error.message))
     request.end();
 } catch (error) {
