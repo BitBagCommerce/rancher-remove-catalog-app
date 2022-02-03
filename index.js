@@ -6,7 +6,7 @@ try {
     const options = {
         hostname: core.getInput('rancherUrl').replace(/http(s)?\:\/\//g, ''),
         port: 443,
-        path: `/v1/catalog.cattle.io.clusterrepos/${core.getInput('appNamespace')}/${core.getInput('appName')}?action=uninstall`,
+        path: `/v1/catalog.cattle.io.apps/${core.getInput('appNamespace')}/${core.getInput('appName')}?action=uninstall`,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
