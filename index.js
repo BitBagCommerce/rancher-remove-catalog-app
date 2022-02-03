@@ -21,7 +21,7 @@ try {
 
         response.on('end', function () {
             if (response.statusCode > 299 || response.statusCode < 200) {
-                console.log("Api call failed with response code " + response.statusCode);
+                core.setFailed("Api call failed with response code " + response.statusCode);
             } else {
                 console.log('App removed');
             }
