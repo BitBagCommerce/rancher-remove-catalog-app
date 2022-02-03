@@ -3,7 +3,7 @@
 ### Running as a Github action
 
 ```yaml
-  -     name: Install app
+  -     name: Remove Rancher's APP
         uses: BitBagCommerce/rancher-remove-catalog-app@v0.1
         with:
             appName: 'some-app'
