@@ -1,0 +1,22 @@
+name: 'Remove installed catalog app'
+description: 'Removes application from cluster'
+inputs:
+    appName:
+        description: "Application's name"
+        required: true
+    appNamespace:
+        description: "Application's namespace"
+        required: true
+    rancherToken:
+        description: "Rancher's API token"
+        required: true
+    rancherUrl:
+        description: "Rancher's base url"
+        required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
+
+branding:
+    icon: activity
+    color: red
