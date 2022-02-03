@@ -2,6 +2,7 @@ const core = require('@actions/core');
 const https = require('https');
 
 try {
+    const data = JSON.stringify({});
     const options = {
         hostname: core.getInput('rancherUrl').replace(/http(s)?\:\/\//g, ''),
         port: 443,
@@ -27,7 +28,8 @@ try {
         });
     });
 
-    request.on('error', error => core.setFailed(error.message))
+    request.on('error', error => core.setFailed(error.message));
+    request.write(data);
     request.end();
 } catch (error) {
     core.setFailed(error.message)
